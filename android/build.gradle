@@ -49,11 +49,16 @@ android {
     kotlinOptions {
         jvmTarget = '17'
     }
-
+    defaultConfig {
+        externalNativeBuild {
+            cmake {
+                cppFlags  "-std=c++14"
+            }
+        }
+    }
     externalNativeBuild {
         cmake {
            path "CMakeLists.txt"
-           cppFlags  "-std=c++14"
         }
     }
 }
